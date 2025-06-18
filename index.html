@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포텐셜봇 - 당신의 잠재력을 깨우는 아침 메시지</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-icon">P</span>
+          <span class="logo-text">포텐셜봇</span>
+        </div>
+        <nav class="nav">
+          <a href="#team" class="nav-link">포텐셜봇이란?</a>
+          <a href="#features" class="nav-link">우리가 특별한 이유</a>
+          <a href="#testimonials" class="nav-link">함께한 이야기</a>
+          <button class="subscribe-btn" onclick="openModal()">무료 구독하기</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content hero-purple">
+        <img src="character.png" alt="포텐셜봇 캐릭터" class="main-character" />
+        <h1 class="hero-title">
+          <span class="highlight">더 좋은 하루를<br />선물할게요</span>
+        </h1>
+        <p class="hero-description">
+          매일 아침 8시,<br />
+          포텐셜봇이 전하는 따뜻한 응원으로<br />
+          당신의 잠재력을 깨워보세요
+        </p>
+        <button class="cta-button" onclick="openModal()">무료로 시작하기</button>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features features-purple">
+      <div class="section-content">
+        <h2 class="section-title">특별한 포텐셜봇의 매력</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🌅</div>
+            <h3>아침 8시, 특별한 메시지</h3>
+            <p>하루를 시작하는 당신에게<br />따뜻한 응원의 메시지를 전달합니다</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💫</div>
+            <h3>맞춤형 콘텐츠</h3>
+            <p>당신의 상황에 맞는<br />특별한 메시지를 제공합니다</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3>지속적인 동기부여</h3>
+            <p>매일 아침 새로운 에너지로<br />하루를 시작하세요</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+      <div class="section-content">
+        <h2 class="section-title">Why 포텐셜봇</h2>
+        <div class="team-content">
+          <div class="team-text">
+            <p class="team-description">
+              취업이 어렵고<br />
+              회사 생활도 쉽지 않은 요즘.<br /><br />
+              저도 이직 준비를 하면서<br />
+              매일 아침 응원이 필요했어요.<br /><br />
+              그래서 만들었습니다.<br />
+              당신의 하루를 위한 아침 인사.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section (Carousel) -->
+    <section id="testimonials" class="testimonials">
+      <div class="section-content">
+        <h2 class="section-title">함께하는 분들의 이야기</h2>
+        <div class="testimonial-carousel">
+          <div class="testimonial-track">
+            <div class="testimonial-card">
+              <p class="testimonial-text">“취업 준비로 힘들었는데, 포텐셜봇 덕분에 매일 아침 힘을 얻었어요.”</p>
+              <div class="testimonial-author">취준생 김00님</div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-text">“이직 준비가 막막했는데, 매일 아침 긍정적인 메시지 덕분에 용기를 냈어요.”</p>
+              <div class="testimonial-author">이직 준비생 박00님</div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-text">“회사 생활이 지칠 때마다 포텐셜봇의 메시지가 큰 위로가 되었어요.”</p>
+              <div class="testimonial-author">직장인(사원급) 이00님</div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-text">“아침마다 따뜻한 말 한마디가 이렇게 큰 힘이 될 줄 몰랐어요.”</p>
+              <div class="testimonial-author">직장인(리더급) 최00님</div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-text">“포텐셜봇 덕분에 하루를 긍정적으로 시작할 수 있어요!”</p>
+              <div class="testimonial-author">취준생 정00님</div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-text">“면접 전날, 포텐셜봇의 응원 메시지에 정말 큰 용기를 얻었습니다.”</p>
+              <div class="testimonial-author">취준생 윤00님</div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-text">“매일 아침 새로운 메시지가 기다려져요. 출근길이 즐거워졌어요.”</p>
+              <div class="testimonial-author">직장인(사원급) 오00님</div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-text">“슬럼프였는데, 포텐셜봇이 다시 일어설 힘을 줬어요.”</p>
+              <div class="testimonial-author">취준생 이00님</div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-text">“혼자라고 느낄 때마다 포텐셜봇이 친구가 되어줬어요.”</p>
+              <div class="testimonial-author">이직 준비생 장00님</div>
+            </div>
+            <div class="testimonial-card">
+              <p class="testimonial-text">“리더로서 부담이 컸는데, 매일 아침 응원에 힘이 납니다.”</p>
+              <div class="testimonial-author">직장인(리더급) 송00님</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="subscribeModal" class="modal">
+      <div class="modal-content">
+        <button class="close-button" onclick="closeModal()" aria-label="닫기">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="14" r="13" fill="#F5F5F7" stroke="#E0E0E0" />
+            <path d="M9 9L19 19M19 9L9 19" stroke="#86868b" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
+        <h2>포텐셜봇이 응원할게요!</h2>
+        <form id="modalSubscribeForm" class="modal-subscribe-form">
+          <div class="form-group">
+            <label>어떤 분이신가요?</label>
+            <div class="user-type-grid">
+              <label class="user-type-card">
+                <input type="radio" name="userType" value="취업준비생" required />
+                <span class="user-type-icon">🎓</span>
+                <span class="user-type-label">취업준비생</span>
+              </label>
+              <label class="user-type-card">
+                <input type="radio" name="userType" value="이직준비생" />
+                <span class="user-type-icon">🚀</span>
+                <span class="user-type-label">이직준비생</span>
+              </label>
+              <label class="user-type-card">
+                <input type="radio" name="userType" value="직장인(사원급)" />
+                <span class="user-type-icon">💼</span>
+                <span class="user-type-label">직장인(사원급)</span>
+              </label>
+              <label class="user-type-card">
+                <input type="radio" name="userType" value="직장인(리더급)" />
+                <span class="user-type-icon">🌟</span>
+                <span class="user-type-label">직장인(리더급)</span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="email" id="modal-email" name="email" required placeholder="이메일 주소를 입력하세요" />
+            <span id="email-error" class="email-error"></span>
+          </div>
+          <button type="submit" class="submit-button">구독하기</button>
+          <div id="modal-result" class="modal-result"></div>
+        </form>
+      </div>
+    </div>
+    <!-- Toast Container -->
+    <div id="toast" class="toast"></div>
+
+    <!-- 감성적 마지막 메시지 (미니멀) -->
+    <section class="final-message-minimal">
+      <div class="final-message-minimal-title">
+        지금 바로 <span>포텐셜봇</span>과 함께<br />
+        당신의 잠재력을 깨워보세요!
+      </div>
+      <button class="cta-button final-message-btn" onclick="openModal()">무료로 시작하기</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© <span id="footer-year"></span> 포텐셜봇</p>
+      </div>
+    </footer>
+  </body>
+</html>
