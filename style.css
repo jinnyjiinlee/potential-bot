@@ -1080,10 +1080,11 @@ body {
 @media (max-width: 600px) {
   .features-grid {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
   .feature-card {
-    padding: 1.5rem 0.7rem 1.2rem 0.7rem;
-    min-height: 140px;
+    padding: 1.2rem 0.5rem;
+    min-height: 120px;
   }
   .feature-icon {
     font-size: 2rem;
@@ -1209,5 +1210,74 @@ body {
 @media (max-width: 768px) {
   .team-values {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-description {
+    font-size: 1rem;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .feature-card {
+    padding: 1.2rem 0.5rem;
+    min-height: 120px;
+  }
+  .testimonial-cards,
+  .testimonial-carousel,
+  .testimonial-track {
+    grid-template-columns: 1fr !important;
+    flex-direction: column !important;
+  }
+  .testimonial-card {
+    min-width: 90vw;
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .cta-button,
+  .final-message-btn {
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+  }
+  .main-character {
+    width: 120px;
+  }
+  .section-title {
+    font-size: 1.3rem;
+  }
+  .nav {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+  .footer {
+    font-size: 0.85rem;
+    padding: 1.5rem 0.5rem 1rem 0.5rem;
+  }
+  .final-message-minimal-title {
+    font-size: 1.08rem;
+  }
+  .final-message-btn {
+    font-size: 1.05rem;
+    padding: 1rem 1.2rem;
+  }
+  .subscribe-btn {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.1rem;
+  }
+  .modal-content {
+    padding: 1.2rem;
+    max-width: 98vw;
+  }
+  .user-type-grid {
+    grid-template-columns: 1fr;
+  }
+  .user-type-card {
+    font-size: 1rem;
+    padding: 0.9rem 0.1rem 0.8rem 0.1rem;
   }
 }
