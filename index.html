@@ -47,17 +47,6 @@
           당신의 잠재력을 깨워보세요
         </p>
         <button class="cta-button" onclick="openModal()">무료로 시작하기</button>
-        <button
-          class="cta-button kakao-share-btn"
-          id="kakaoShareBtn"
-          style="background: #fee500; color: #3c1e1e; margin-top: 1rem"
-        >
-          <img
-            src="https://developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png"
-            alt="카카오톡 공유"
-            style="height: 22px; vertical-align: middle; margin-right: 8px"
-          />카카오톡으로 공유
-        </button>
       </div>
     </section>
 
@@ -199,26 +188,5 @@
         <p>© <span id="footer-year"></span> 포텐셜봇</p>
       </div>
     </footer>
-
-    <!-- Kakao JS SDK -->
-    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script>
-      // Kakao SDK 초기화 (본인의 JS 키로 교체 필요)
-      Kakao.init('YOUR_KAKAO_JAVASCRIPT_KEY');
-      document.getElementById('kakaoShareBtn').onclick = function () {
-        Kakao.Link.sendDefault({
-          objectType: 'feed',
-          content: {
-            title: '포텐셜봇',
-            description: '매일 아침, 당신만을 위한 응원 메시지로 하루를 시작하세요!',
-            imageUrl: 'https://potential-bot.netlify.app/og-image.png',
-            link: {
-              mobileWebUrl: 'https://potential-bot.netlify.app',
-              webUrl: 'https://potential-bot.netlify.app',
-            },
-          },
-        });
-      };
-    </script>
   </body>
 </html>
