@@ -29,10 +29,13 @@ function showStep(stepNumber) {
 // Toast Notification
 function showToast(message) {
   const toast = document.getElementById('toast');
+  const backdrop = document.getElementById('toast-backdrop');
   toast.textContent = message;
   toast.classList.add('show');
+  if (backdrop) backdrop.classList.add('show');
   setTimeout(() => {
     toast.classList.remove('show');
+    if (backdrop) backdrop.classList.remove('show');
   }, 2200);
 }
 
