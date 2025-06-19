@@ -540,17 +540,18 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: var(--primary-color);
+  background: #4b256d;
   color: #fff;
   padding: 1.5rem 2.5rem;
-  border-radius: 18px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.18);
+  border-radius: 22px;
+  font-size: 1.15rem;
+  font-weight: 400;
+  box-shadow: 0 8px 32px rgba(75, 37, 109, 0.18), 0 2px 8px rgba(127, 90, 240, 0.07);
   opacity: 0;
   pointer-events: none;
   z-index: 3000;
   transition: opacity 0.4s, top 0.4s;
+  white-space: pre-line;
 }
 
 .toast.show {
@@ -707,6 +708,11 @@ body {
   .final-message-btn {
     font-size: 1.05rem;
     padding: 1rem 1.2rem;
+  }
+  .toast {
+    font-size: 0.98rem;
+    padding: 1rem 1.2rem;
+    border-radius: 16px;
   }
 }
 

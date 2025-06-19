@@ -1,6 +1,7 @@
 const SUPABASE_URL = 'https://tarbsjeluiovntyasmjw.supabase.co';
-const SUPABASE_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRhcmJzamVsdWlvdm50eWFzbWp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAyNDE4MTUsImV4cCI6MjA2NTgxNzgxNX0.9NTOQ-hoiZYur7sSdBeVQQzO69RcNA5Aa-a5yz66eqQ';
-const TABLE = 'users';  
+const SUPABASE_API_KEY =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRhcmJzamVsdWlvdm50eWFzbWp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAyNDE4MTUsImV4cCI6MjA2NTgxNzgxNX0.9NTOQ-hoiZYur7sSdBeVQQzO69RcNA5Aa-a5yz66eqQ';
+const TABLE = 'users';
 
 // Modal Control Functions
 function openModal() {
@@ -160,7 +161,7 @@ if (modalSubscribeForm) {
       if (res.ok) {
         const responseBody = await res.text();
         console.log('Response body:', responseBody);
-        showToast('신청되었습니다! 이제 매일 아침 포텐셜봇이 응원의 메시지를 보내드릴게요!');
+        showToast('신청되었습니다!\n이제 매일 아침 포텐셜봇이 응원의 메시지를 보내드릴게요!');
         modalSubscribeForm.reset();
         setTimeout(() => {
           closeModal();
