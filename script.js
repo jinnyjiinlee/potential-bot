@@ -3,8 +3,6 @@ function openModal() {
   const modal = document.getElementById('subscribeModal');
   modal.classList.add('show');
   document.body.style.overflow = 'hidden';
-  // Reset to first step
-  showStep(1);
 }
 
 function closeModal() {
@@ -99,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (err) {
         resultDiv.textContent = '네트워크 오류가 발생했습니다.';
+        console.error('네트워크 오류:', err);
         resultDiv.classList.add('error');
       }
     });
@@ -170,6 +169,7 @@ if (modalSubscribeForm) {
       }
     } catch (err) {
       resultDiv.textContent = '네트워크 오류가 발생했습니다.';
+      console.error('네트워크 오류:', err);
       resultDiv.classList.add('error');
     }
   });
