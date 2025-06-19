@@ -103,6 +103,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // user-type-card 선택 시 .selected 클래스 관리
+  document.querySelectorAll('.user-type-card input[type="radio"]').forEach((radio) => {
+    radio.addEventListener('change', function () {
+      document.querySelectorAll('.user-type-card').forEach((card) => card.classList.remove('selected'));
+      if (this.checked) {
+        this.closest('.user-type-card').classList.add('selected');
+      }
+    });
+    // 페이지 로드 시 이미 체크된 항목에도 적용
+    if (radio.checked) {
+      radio.closest('.user-type-card').classList.add('selected');
+    }
+  });
 });
 
 // === Modal Subscribe Form (Email + User Type) ===

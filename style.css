@@ -495,17 +495,27 @@ body {
   transition: color 0.18s;
 }
 
-.user-type-card:hover,
-.user-type-card:active {
-  border: 2.5px solid #7f5af0;
-  box-shadow: none;
-  transform: none;
-  z-index: 2;
-}
-
+/* 선택된 user-type-card에만 테두리 항상 유지 */
 .user-type-card input[type='radio']:checked ~ .user-type-icon,
 .user-type-card input[type='radio']:checked ~ .user-type-label {
   color: #7f5af0 !important;
+}
+.user-type-card input[type='radio']:checked ~ .user-type-label {
+  /* 기존 스타일 유지 */
+}
+.user-type-card input[type='radio']:checked {
+  /* 부모 .user-type-card에 selected 클래스 부여 필요 (JS로) */
+}
+
+/* JS로 .selected 클래스 부여 시 */
+.user-type-card.selected {
+  border: 2.5px solid #7f5af0 !important;
+}
+
+.user-type-card:hover,
+.user-type-card:active {
+  /* border 강조 제거 */
+  border: 2px solid #aab;
 }
 
 @media (max-width: 600px) {
