@@ -1,7 +1,6 @@
 // Supabase configuration
 const SUPABASE_URL = 'https://tarbsjeluiovntyasmjw.supabase.co';
-const SUPABASE_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRhcmJzamVsdWlvdm50eWFzbWp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAyNDE4MTUsImV4cCI6MjA2NTgxNzgxNX0.9NTOQ-hoiZYur7sSdBeVQQzO69RcNA5Aa-a5yz66eqQ';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRhcmJzamVsdWlvdm50eWFzbWp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAyNDE4MTUsImV4cCI6MjA2NTgxNzgxNX0.9NTOQ-hoiZYur7sSdBeVQQzO69RcNA5Aa-a5yz66eqQ';
 
 // Function to fetch users from Supabase
 async function fetchUsers() {
@@ -33,7 +32,7 @@ async function sendEmailsByType() {
 
     // Group users by type
     const usersByType = {
-      취준생: [],
+      '취준생': [],
       '이직 준비생': [],
       '직장인(사원급)': [],
       '직장인(리더급)': [],
