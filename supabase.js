@@ -1,14 +1,15 @@
 // Supabase configuration
 const SUPABASE_URL = 'https://tarbsjeluiovntyasmjw.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRhcmJzamVsdWlvdm50eWFzbWp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAyNDE4MTUsImV4cCI6MjA2NTgxNzgxNX0.9NTOQ-hoiZYur7sSdBeVQQzO69RcNA5Aa-a5yz66eqQ';
+const SUPABASE_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRhcmJzamVsdWlvdm50eWFzbWp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAyNDE4MTUsImV4cCI6MjA2NTgxNzgxNX0.9NTOQ-hoiZYur7sSdBeVQQzO69RcNA5Aa-a5yz66eqQ';
+const TABLE             = 'users';  
 
 // Function to fetch users from Supabase
 async function fetchUsers() {
   try {
     const response = await fetch(`${SUPABASE_URL}/rest/v1/users`, {
       headers: {
-        apikey: SUPABASE_KEY,
-        Authorization: `Bearer ${SUPABASE_KEY}`,
+        apikey: SUPABASE_API_KEY,
+        Authorization: `Bearer ${SUPABASE_API_KEY}`,
         'Content-Type': 'application/json',
       },
     });
