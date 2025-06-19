@@ -1214,19 +1214,43 @@ body {
 }
 
 @media (max-width: 600px) {
+  body {
+    font-size: 15px;
+    overflow-x: hidden;
+  }
+  .header-content,
+  .section-content {
+    padding: 0 0.5rem;
+  }
+  .nav {
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
   .hero-title {
     font-size: 2rem;
+    margin-bottom: 1rem;
   }
   .hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .main-character {
+    width: 100px;
+    margin-bottom: 1rem;
+  }
+  .cta-button,
+  .final-message-btn,
+  .subscribe-btn {
     font-size: 1rem;
+    padding: 0.8rem 1.2rem;
   }
   .features-grid {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
+    gap: 1rem;
   }
   .feature-card {
-    padding: 1.2rem 0.5rem;
-    min-height: 120px;
+    padding: 1rem 0.5rem;
+    min-height: 100px;
   }
   .testimonial-cards,
   .testimonial-carousel,
@@ -1237,47 +1261,26 @@ body {
   .testimonial-card {
     min-width: 90vw;
     max-width: 98vw;
-    padding: 1.2rem 0.5rem;
-  }
-  .cta-button,
-  .final-message-btn {
+    padding: 1rem 0.5rem;
     font-size: 1rem;
-    padding: 1rem 1.2rem;
-  }
-  .main-character {
-    width: 120px;
   }
   .section-title {
-    font-size: 1.3rem;
-  }
-  .nav {
-    gap: 1rem;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
   }
   .footer {
     font-size: 0.85rem;
-    padding: 1.5rem 0.5rem 1rem 0.5rem;
-  }
-  .final-message-minimal-title {
-    font-size: 1.08rem;
-  }
-  .final-message-btn {
-    font-size: 1.05rem;
-    padding: 1rem 1.2rem;
-  }
-  .subscribe-btn {
-    font-size: 0.95rem;
-    padding: 0.7rem 1.1rem;
+    padding: 1.2rem 0.5rem 0.8rem 0.5rem;
   }
   .modal-content {
-    padding: 1.2rem;
+    padding: 1rem;
     max-width: 98vw;
   }
   .user-type-grid {
     grid-template-columns: 1fr;
   }
   .user-type-card {
-    font-size: 1rem;
-    padding: 0.9rem 0.1rem 0.8rem 0.1rem;
+    font-size: 0.98rem;
+    padding: 0.7rem 0.1rem 0.7rem 0.1rem;
   }
 }
