@@ -26,8 +26,8 @@
           <span class="logo-text">포텐셜봇</span>
         </div>
         <nav class="nav">
-          <a href="#team" class="nav-link">포텐셜봇이란?</a>
-          <a href="#features" class="nav-link">우리가 특별한 이유</a>
+          <a href="#team"  class="nav-link hide-on-small">포텐셜봇이란?</a>
+          <a href="#features"  class="nav-link hide-on-small">우리가 특별한 이유</a>
           <a href="#testimonials" class="nav-link">함께한 이야기</a>
           <button class="subscribe-btn" onclick="openModal()">무료 구독하기</button>
         </nav>
@@ -53,7 +53,7 @@
     <!-- Features Section -->
     <section id="features" class="features features-purple">
       <div class="section-content">
-        <h2 class="section-title">특별한 포텐셜봇의 매력</h2>
+        
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">🌅</div>
@@ -72,12 +72,16 @@
           </div>
         </div>
       </div>
+    </div>
+
+
+  
     </section>
 
     <!-- Testimonials Section (Carousel) -->
     <section id="testimonials" class="testimonials">
       <div class="section-content">
-        <h2 class="section-title">함께하는 분들의 이야기</h2>
+        
         <div class="testimonial-carousel">
           <div class="testimonial-track">
             <div class="testimonial-card">
@@ -137,7 +141,7 @@
         <h2>포텐셜봇이 응원할게요!</h2>
         <form id="modalSubscribeForm" class="modal-subscribe-form">
           <div class="form-group">
-            <label>어떤 분이신가요?</label>
+            <h3>어떤 분이신가요?</h3>
             <div class="user-type-grid">
               <label class="user-type-card">
                 <input type="radio" name="userType" value="취업준비생" required />
@@ -161,15 +165,17 @@
               </label>
             </div>
           </div>
-          <div class="form-group">
-            <input type="email" id="modal-email" name="email" required placeholder="이메일 주소를 입력하세요" />
-            <span id="email-error" class="email-error"></span>
-          </div>
-          <button type="submit" class="submit-button">구독하기</button>
-          <div id="modal-result" class="modal-result"></div>
-        </form>
+
+     <div class="email-form">
+        <input id="modal-email" type="email" name="email" placeholder="이메일 주소를 입력하세요" required />
+        <span id="email-error" class="email-error"></span>
+        <button type="submit">구독하기</button>
       </div>
-    </div>
+
+      <div id="modal-result" class="modal-result"></div>
+    </form>
+  </div>
+</div>
     <!-- Toast Container -->
     <div id="toast" class="toast"></div>
 

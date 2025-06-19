@@ -61,81 +61,49 @@ document.addEventListener('DOMContentLoaded', () => {
   animatedElements.forEach((element) => {
     observer.observe(element);
   });
-});
+  addTouchFeedback('.cta-button');
+  addTouchFeedback('.subscribe-btn');
+  addTouchFeedback('.submit-button');
+  addTouchFeedback('.feature-card');
+  addTouchFeedback('.testimonial-card');
+  addTouchFeedback('.user-type-card');
+  addTouchFeedback('.subscribe-form input[type="email"]');
+  addTouchFeedback('.modal-subscribe-form input[type="email"]');
 
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  });
-});
-
-// Header scroll effect
-let lastScroll = 0;
-const header = document.querySelector('.header');
-
-window.addEventListener('scroll', () => {
-  const currentScroll = window.pageYOffset;
-
-  if (currentScroll <= 0) {
-    header.classList.remove('scroll-up');
-    return;
-  }
-
-  if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-    // Scroll Down
-    header.classList.remove('scroll-up');
-    header.classList.add('scroll-down');
-  } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-    // Scroll Up
-    header.classList.remove('scroll-down');
-    header.classList.add('scroll-up');
-  }
-  lastScroll = currentScroll;
-});
-
-// === Supabase Email Subscription ===
-const SUPABASE_URL = 'https://tarbsjeluiovntyasmjw.supabase.co';
-const SUPABASE_API_KEY =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRhcmJzamVsdWlvdm50eWFzbWp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAyNDE4MTUsImV4cCI6MjA2NTgxNzgxNX0.9NTOQ-hoiZYur7sSdBeVQQzO69RcNA5Aa-a5yz66eqQ';
-const TABLE = 'users';
-
-const subscribeForm = document.getElementById('subscribeForm');
-if (subscribeForm) {
-  subscribeForm.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const email = document.getElementById('email').value;
-    const resultDiv = document.getElementById('result');
-    resultDiv.textContent = '';
-    try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}`, {
-        method: 'POST',
-        headers: {
-          apikey: SUPABASE_API_KEY,
-          Authorization: 'Bearer ' + SUPABASE_API_KEY,
-          'Content-Type': 'application/json',
-          Prefer: 'return=representation',
-        },
-        body: JSON.stringify({ email }),
-      });
-      if (res.ok) {
-        resultDiv.textContent = '구독이 완료되었습니다!';
-        subscribeForm.reset();
-      } else {
-        resultDiv.textContent = '에러가 발생했습니다. 다시 시도해 주세요.';
+  // === Supabase Email Subscription ===
+  const subscribeForm = document.getElementById('subscribeForm');
+  if (subscribeForm) {
+    subscribeForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const resultDiv = document.getElementById('result');
+      resultDiv.textContent = '';
+      try {
+        const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}`, {
+          method: 'POST',
+          headers: {
+            apikey: SUPABASE_API_KEY,
+            Authorization: 'Bearer ' + SUPABASE_API_KEY,
+            'Content-Type': 'application/json',
+            Prefer: 'return=representation',
+          },
+          body: JSON.stringify({ email }),
+        });
+        if (res.ok) {
+          resultDiv.textContent = '구독이 완료되었습니다!';
+          resultDiv.classList.remove('error');
+          subscribeForm.reset();
+        } else {
+          resultDiv.textContent = '에러가 발생했습니다. 다시 시도해 주세요.';
+          resultDiv.classList.add('error');
+        }
+      } catch (err) {
+        resultDiv.textContent = '네트워크 오류가 발생했습니다.';
+        resultDiv.classList.add('error');
       }
-    } catch (err) {
-      resultDiv.textContent = '네트워크 오류가 발생했습니다.';
-    }
-  });
-}
+    });
+  }
+});
 
 // === Modal Subscribe Form (Email + User Type) ===
 const modalSubscribeForm = document.getElementById('modalSubscribeForm');
@@ -184,9 +152,11 @@ if (modalSubscribeForm) {
         console.log('Error response status:', res.status);
         res.text().then((text) => console.log('Error response body:', text));
         resultDiv.textContent = '에러가 발생했습니다. 다시 시도해 주세요.';
+        resultDiv.classList.add('error');
       }
     } catch (err) {
       resultDiv.textContent = '네트워크 오류가 발생했습니다.';
+      resultDiv.classList.add('error');
     }
   });
   // 이메일 입력 시 에러 메시지 초기화
@@ -220,17 +190,6 @@ function addTouchFeedback(selector) {
     });
   });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  addTouchFeedback('.cta-button');
-  addTouchFeedback('.subscribe-btn');
-  addTouchFeedback('.submit-button');
-  addTouchFeedback('.feature-card');
-  addTouchFeedback('.testimonial-card');
-  addTouchFeedback('.user-type-card');
-  addTouchFeedback('.subscribe-form input[type="email"]');
-  addTouchFeedback('.modal-subscribe-form input[type="email"]');
-});
 
 // Toss 스타일 후기 캐러셀 자동 슬라이드
 (function () {
