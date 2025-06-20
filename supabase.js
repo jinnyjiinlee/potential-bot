@@ -8,8 +8,8 @@ async function fetchUsers() {
   try {
     const response = await fetch(`${SUPABASE_URL}/rest/v1/users`, {
       headers: {
-        apikey: SUPABASE_KEY,
-        Authorization: `Bearer ${SUPABASE_KEY}`,
+        apikey: SUPABASE_API_KEY,
+        Authorization: `Bearer ${SUPABASE_API_KEY}`,
         'Content-Type': 'application/json',
       },
     });
