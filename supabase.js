@@ -8,8 +8,8 @@ async function fetchUsers() {
   try {
     const response = await fetch(`${SUPABASE_URL}/rest/v1/users`, {
       headers: {
-        apikey: SUPABASE_API_KEY,
-        Authorization: `Bearer ${SUPABASE_API_KEY}`,
+        apikey: SUPABASE_KEY,
+        Authorization: `Bearer ${SUPABASE_KEY}`,
         'Content-Type': 'application/json',
       },
     });
@@ -19,12 +19,26 @@ async function fetchUsers() {
     }
 
     const users = await response.json();
-    return users;
+
+    // 한국 시간으로 변환된 created_at_kst 필드 추가
+    const usersWithKST = users.map((user) => {
+      const utcDate = new Date(user.created_at);
+      const kstDate = new Date(utcDate.getTime() + 9 * 60 * 60 * 1000); // UTC + 9시간
+      return {
+        ...user,
+        created_at_kst: kstDate.toLocaleString('ko-KR', {
+          timeZone: 'Asia/Seoul',
+        }),
+      };
+    });
+
+    return usersWithKST;
   } catch (error) {
     console.error('Error fetching users:', error);
     throw error;
   }
 }
+
 
 // Function to send emails based on user type
 async function sendEmailsByType() {
