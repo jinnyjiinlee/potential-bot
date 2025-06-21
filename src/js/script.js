@@ -239,7 +239,9 @@ function addTouchFeedback(selector) {
     const maxIdx = cards.length - visible;
     if (idx > maxIdx) idx = 0;
     if (idx < 0) idx = maxIdx;
-    track.style.transform = `translateX(-${(100 / visible) * idx}%)`;
+
+    const testimonialCardWidth = 320 + 16;
+    track.style.transform = `translateX(-${idx * testimonialCardWidth}px)`;
     current = idx;
   }
   function next() {
