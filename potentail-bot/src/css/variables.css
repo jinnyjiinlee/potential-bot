@@ -1,0 +1,17 @@
+/* =====================
+   Color & Common Vars
+====================== */
+:root {
+  --primary-color: #8b5cf6;
+  --primary-color-dark: #7c3aed;
+  --accent-color: #a78bfa;
+  --text-color: #2d1a4a;
+  --background-color: #f8f6fc;
+  --secondary-background: #f3e8ff;
+  --card-bg: #fff;
+  --card-radius: 20px;
+  --card-shadow: 0 4px 16px rgba(139, 92, 246, 0.08);
+  --card-shadow-hover: 0 8px 24px rgba(139, 92, 246, 0.18);
+  --footer-text: #86868b;
+  --footer-border: #ececf0;
+}

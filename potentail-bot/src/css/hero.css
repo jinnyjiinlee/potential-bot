@@ -1,0 +1,70 @@
+/* =====================
+   Hero Section
+====================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 7rem 2rem 5rem 2rem;
+  background: linear-gradient(to bottom, var(--gradient-start), var(--gradient-end));
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.main-character {
+  position: relative;
+  z-index: 1;
+  width: 180px;
+  margin: 0 auto 2rem auto;
+  display: block;
+  background: none;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #22223b;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-title .highlight {
+  color: var(--primary-color);
+  font-size: inherit;
+  font-weight: 900;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  color: #5b3a8b;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.cta-button,
+.final-message-btn {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 1.1rem 2.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cta-button:hover,
+.final-message-btn:hover {
+  background: var(--primary-color-dark);
+  transform: translateY(-2px) scale(1.03);
+}
