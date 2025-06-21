@@ -5,12 +5,11 @@ const Modal = ({ onClose }) => {
     <div id='subscribeModal' className='modal show'>
       <div className='modal-content'>
         <button className='close-button' onClick={onClose}>
-          닫기
+          <svg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <circle cx='14' cy='14' r='13' fill='#F5F5F7' stroke='#E0E0E0' />
+            <path d='M9 9L19 19M19 9L9 19' stroke='#86868b' stroke-width='2' stroke-linecap='round' />
+          </svg>
         </button>
-        <svg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
-          <circle cx='14' cy='14' r='13' fill='#F5F5F7' stroke='#E0E0E0' />
-          <path d='M9 9L19 19M19 9L9 19' stroke='#86868b' stroke-width='2' stroke-linecap='round' />
-        </svg>
         <h2>포텐셜봇이 응원할게요!</h2>
         <form id='modalSubscribeForm' className='modal-subscribe-form'>
           <div className='form-group'>
