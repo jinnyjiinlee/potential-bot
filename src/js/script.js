@@ -249,7 +249,7 @@ function addTouchFeedback(selector) {
   }
   function start() {
     if (interval) clearInterval(interval);
-    interval = setInterval(next, 3500);
+    interval = setInterval(next, 2500);
   }
   function stop() {
     if (interval) clearInterval(interval);
