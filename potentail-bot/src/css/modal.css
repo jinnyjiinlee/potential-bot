@@ -183,6 +183,12 @@
   border: 2px solid #aab;
 }
 
+.user-type-card.selected {
+  border: 1px solid #8b5cf6;
+  border-radius: 16px;
+  background-color: #f9f6ff;
+}
+
 @media (max-width: 600px) {
   .user-type-grid {
     grid-template-columns: 1fr;

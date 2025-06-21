@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Modal = ({ onClose }) => {
+  const [userType, setUserType] = useState('');
+
+  const handleUserTypeChange = (e) => {
+    setUserType(e.target.value);
+  };
+
   return (
     <div id='subscribeModal' className='modal show'>
       <div className='modal-content'>
@@ -10,28 +16,57 @@ const Modal = ({ onClose }) => {
             <path d='M9 9L19 19M19 9L9 19' stroke='#86868b' stroke-width='2' stroke-linecap='round' />
           </svg>
         </button>
+
         <h2>포텐셜봇이 응원할게요!</h2>
         <form id='modalSubscribeForm' className='modal-subscribe-form'>
           <div className='form-group'>
             <h3>어떤 분이신가요?</h3>
             <div className='user-type-grid'>
-              <label className='user-type-card'>
-                <input type='radio' name='userType' value='취업준비생' required />
+              <label className={`user-type-card ${userType === '취업준비생' ? 'selected' : ''}`}>
+                <input
+                  type='radio'
+                  name='userType'
+                  value='취업준비생'
+                  checked={userType === '취업준비생'}
+                  onChange={handleUserTypeChange}
+                  required
+                />
                 <span className='user-type-icon'>🎓</span>
                 <span className='user-type-label'>취업준비생</span>
               </label>
-              <label className='user-type-card'>
-                <input type='radio' name='userType' value='이직준비생' />
+
+              <label className={`user-type-card ${userType === '이직준비생' ? 'selected' : ''}`}>
+                <input
+                  type='radio'
+                  name='userType'
+                  value='이직준비생'
+                  checked={userType === '이직준비생'}
+                  onChange={handleUserTypeChange}
+                />
                 <span className='user-type-icon'>🚀</span>
                 <span className='user-type-label'>이직준비생</span>
               </label>
-              <label className='user-type-card'>
-                <input type='radio' name='userType' value='직장인(사원급)' />
+
+              <label className={`user-type-card ${userType === '직장인(사원급)' ? 'selected' : ''}`}>
+                <input
+                  type='radio'
+                  name='userType'
+                  value='직장인(사원급)'
+                  checked={userType === '직장인(사원급)'}
+                  onChange={handleUserTypeChange}
+                />
                 <span className='user-type-icon'>💼</span>
                 <span className='user-type-label'>직장인(사원급)</span>
               </label>
-              <label className='user-type-card'>
-                <input type='radio' name='userType' value='직장인(리더급)' />
+
+              <label className={`user-type-card ${userType === '직장인(리더급)' ? 'selected' : ''}`}>
+                <input
+                  type='radio'
+                  name='userType'
+                  value='직장인(리더급)'
+                  checked={userType === '직장인(리더급)'}
+                  onChange={handleUserTypeChange}
+                />
                 <span className='user-type-icon'>🌟</span>
                 <span className='user-type-label'>직장인(리더급)</span>
               </label>
