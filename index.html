@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>포텐셜봇 - 당신의 잠재력을 깨우는 아침 메시지</title>
     <!-- External CSS -->
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <script type="module" src="src/js/script.js"></script>
     <meta property="og:title" content="포텐셜봇 - 당신의 잠재력을 깨우는 아침 메시지" />
     <meta property="og:description" content="매일 아침, 당신만을 위한 응원 메시지로 하루를 시작하세요!" />
-    <meta property="og:image" content="https://potential-bot.netlify.app/og-image.png" />
+    <meta property="og:image" content="https://potential-bot.netlify.app/og-preview-image.png" />
     <meta property="og:url" content="https://potential-bot.netlify.app/" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="포텐셜봇 - 당신의 잠재력을 깨우는 아침 메시지" />
     <meta name="twitter:description" content="매일 아침, 당신만을 위한 응원 메시지로 하루를 시작하세요!" />
-    <meta name="twitter:image" content="https://potential-bot.netlify.app/og-image.png" />
+    <meta name="twitter:image" content="https://potential-bot.netlify.app/og-preview-image.png" />
   </head>
   <body>
     <!-- Header -->
@@ -37,7 +37,7 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content hero-purple">
-        <img src="character.png" alt="포텐셜봇 캐릭터" class="main-character" />
+        <img src="./src/assets/character-image.png" alt="포텐셜봇 캐릭터" class="main-character" />
         <h1 class="hero-title">
           <span class="highlight">더 좋은 하루를<br />선물할게요</span>
         </h1>
@@ -46,7 +46,7 @@
           포텐셜봇이 전하는 따뜻한 응원으로<br />
           당신의 잠재력을 깨워보세요
         </p>
-        <button class="cta-button" onclick="openModal()">무료로 시작하기</button>
+        <button class="cta-button" id="open-modal-btn">무료로 시작하기</button>
       </div>
     </section>
 
@@ -132,7 +132,7 @@
     <!-- Modal -->
     <div id="subscribeModal" class="modal">
       <div class="modal-content">
-        <button class="close-button" onclick="closeModal()" aria-label="닫기">
+        <button class="close-button" id="close-modal-btn">닫기</button>
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="14" cy="14" r="13" fill="#F5F5F7" stroke="#E0E0E0" />
             <path d="M9 9L19 19M19 9L9 19" stroke="#86868b" stroke-width="2" stroke-linecap="round" />

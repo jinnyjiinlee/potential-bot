@@ -1,6 +1,4 @@
-// Supabase configuration
-const SUPABASE_URL = 'https://tarbsjeluiovntyasmjw.supabase.co';
-const SUPABASE_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRhcmJzamVsdWlvdm50eWFzbWp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAyNDE4MTUsImV4cCI6MjA2NTgxNzgxNX0.9NTOQ-hoiZYur7sSdBeVQQzO69RcNA5Aa-a5yz66eqQ';
+import { SUPABASE_URL, SUPABASE_API_KEY } from './config.js';
 
 // Function to fetch users from Supabase
 async function fetchUsers() {
@@ -38,7 +36,6 @@ async function fetchUsers() {
   }
 }
 
-
 // Function to send emails based on user type
 async function sendEmailsByType() {
   try {
@@ -46,8 +43,8 @@ async function sendEmailsByType() {
 
     // Group users by type
     const usersByType = {
-      '취업준비생': [],
-      '이직준비생': [],
+      취업준비생: [],
+      이직준비생: [],
       '직장인(사원급)': [],
       '직장인(리더급)': [],
     };
@@ -65,37 +62,4 @@ async function sendEmailsByType() {
   }
 }
 
-async function insertUser(email, user_type) {
-  const utcNow = new Date();
-  const kstNow = new Date(utcNow.getTime() + 9 * 60 * 60 * 1000);
-
-  const response = await fetch(`${SUPABASE_URL}/rest/v1/users`, {
-    method: 'POST',
-    headers: {
-      apikey: SUPABASE_API_KEY,
-      Authorization: `Bearer ${SUPABASE_API_KEY}`,
-      'Content-Type': 'application/json',
-      Prefer: 'return=representation',
-    },
-    body: JSON.stringify([
-      {
-        email,
-        user_type,
-        created_at: utcNow.toISOString(),        // UTC 기준
-        created_at_kst: kstNow.toISOString(),    // KST 기준으로 저장
-      },
-    ]),
-  });
-
-  if (!response.ok) {
-    const error = await response.json();
-    console.error('Error inserting user:', error);
-    throw new Error('Insert failed');
-  }
-
-  const insertedUser = await response.json();
-  return insertedUser;
-}
-
-
-export { fetchUsers, sendEmailsByType, insertUser };
+export { fetchUsers, sendEmailsByType };
