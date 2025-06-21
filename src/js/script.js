@@ -74,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
   addTouchFeedback('.modal-subscribe-form input[type="email"]');
 
   // === Modal Open Button ===
-  const openModalBtn = document.getElementById('open-modal-btn');
-  if (openModalBtn) {
-    openModalBtn.addEventListener('click', openModal);
-  }
+  const openModalBtn = document.querySelectorAll('.open-modal-btn');
+  openModalBtn.forEach((btn) => {
+    btn.addEventListener('click', openModal);
+  });
 
   // === Close Modal Button ===
   const closeModalBtn = document.querySelector('.close-button');

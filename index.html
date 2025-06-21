@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>포텐셜봇 - 당신의 잠재력을 깨우는 아침 메시지</title>
-    
+
     <!-- External CSS -->
     <link rel="stylesheet" href="./src/css/style.css" />
     <script type="module" src="src/js/script.js"></script>
@@ -19,7 +19,6 @@
     <meta name="twitter:image" content="https://potential-bot.netlify.app/og-preview-image.png" />
   </head>
   <body>
-
     <!-- Header -->
     <header class="header">
       <div class="header-content">
@@ -28,14 +27,13 @@
           <span class="logo-text">포텐셜봇</span>
         </div>
         <nav class="nav">
-          <a href="#team"  class="nav-link hide-on-small">포텐셜봇이란?</a>
-          <a href="#features"  class="nav-link hide-on-small">우리가 특별한 이유</a>
+          <a href="#team" class="nav-link hide-on-small">포텐셜봇이란?</a>
+          <a href="#features" class="nav-link hide-on-small">우리가 특별한 이유</a>
           <a href="#testimonials" class="nav-link">함께한 이야기</a>
-          <button class="subscribe-btn" onclick="openModal()">무료 구독하기</button>
+          <button class="subscribe-btn open-modal-btn">무료 구독하기</button>
         </nav>
       </div>
     </header>
-
 
     <!-- Hero Section -->
     <section class="hero">
@@ -49,7 +47,7 @@
           포텐셜봇이 전하는 따뜻한 응원으로<br />
           당신의 잠재력을 깨워보세요
         </p>
-        <button class="cta-button" id="open-modal-btn">무료로 시작하기</button>
+        <button class="cta-button open-modal-btn">무료로 시작하기</button>
       </div>
     </section>
 
@@ -79,7 +77,6 @@
     <!-- Testimonials Section (Carousel) -->
     <section id="testimonials" class="testimonials">
       <div class="section-content">
-        
         <div class="testimonial-carousel">
           <div class="testimonial-track">
             <div class="testimonial-card">
@@ -130,7 +127,7 @@
     <!-- Modal -->
     <div id="subscribeModal" class="modal">
       <div class="modal-content">
-        <button class="close-button" id="close-modal-btn">닫기</button>
+        <button class="close-button" id="close-modal-btn">
           <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="14" cy="14" r="13" fill="#F5F5F7" stroke="#E0E0E0" />
             <path d="M9 9L19 19M19 9L9 19" stroke="#86868b" stroke-width="2" stroke-linecap="round" />
@@ -164,16 +161,16 @@
             </div>
           </div>
 
-     <div class="email-form">
-        <input id="modal-email" type="email" name="email" placeholder="이메일 주소를 입력하세요" required />
-        <span id="email-error" class="email-error"></span>
-        <button type="submit">구독하기</button>
-      </div>
+          <div class="email-form">
+            <input id="modal-email" type="email" name="email" placeholder="이메일 주소를 입력하세요" required />
+            <span id="email-error" class="email-error"></span>
+            <button type="submit">구독하기</button>
+          </div>
 
-      <div id="modal-result" class="modal-result"></div>
-    </form>
-  </div>
-</div>
+          <div id="modal-result" class="modal-result"></div>
+        </form>
+      </div>
+    </div>
 
     <!-- Toast Container -->
     <div id="toast" class="toast"></div>
@@ -185,7 +182,7 @@
         지금 바로 <span>포텐셜봇</span>과 함께<br />
         당신의 잠재력을 깨워보세요!
       </div>
-      <button class="cta-button final-message-btn" onclick="openModal()">무료로 시작하기</button>
+      <button class="cta-button final-message-btn open-modal-btn">무료로 시작하기</button>
     </section>
 
     <!-- Footer -->
