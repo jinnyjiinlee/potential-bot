@@ -291,3 +291,11 @@ document.querySelector('.btn-footer')?.addEventListener('click', () => {
     event_label: 'footer_button',
   });
 });
+
+// 구독하기 클릭
+document.querySelector('#modalSubscribeForm button[type="submit"]')?.addEventListener('click', () => {
+  gtag('event', 'subscribe_click', {
+    event_category: 'engagement',
+    event_label: 'modal_button',
+  });
+});
