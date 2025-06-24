@@ -269,3 +269,25 @@ document.addEventListener('DOMContentLoaded', function () {
   const el = document.getElementById('footer-year');
   if (el) el.textContent = year;
 });
+
+// GA4 추적
+document.querySelector('.btn-header')?.addEventListener('click', () => {
+  gtag('event', 'subscribe_click', {
+    event_category: 'engagement',
+    event_label: 'header_button',
+  });
+});
+
+document.querySelector('.btn-hero')?.addEventListener('click', () => {
+  gtag('event', 'subscribe_click', {
+    event_category: 'engagement',
+    event_label: 'hero_button',
+  });
+});
+
+document.querySelector('.btn-footer')?.addEventListener('click', () => {
+  gtag('event', 'subscribe_click', {
+    event_category: 'engagement',
+    event_label: 'footer_button',
+  });
+});
