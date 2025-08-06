@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react';
-import { supabase } from '@/lib/supabaseClient';
+import { supabase } from '../lib/supabaseClient';
 
 type ModalProps = {
   show: boolean;
