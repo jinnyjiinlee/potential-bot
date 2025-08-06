@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
 
 type ModalProps = {
@@ -20,6 +20,12 @@ export default function Modal({ show, onClose }: ModalProps) {
   const [userType, setUserType] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    // 초기화
+    setUserType('');
+    setEmail('');
+  }, [show]);
 
   if (!show) return null;
 
@@ -120,6 +126,7 @@ export default function Modal({ show, onClose }: ModalProps) {
 
 function RadioCard({ icon, label, value, name, required = false, checked = false, onChange }: RadioCardProps) {
   const id = `${name}-${value}`;
+  const borderColor = checked ? 'border-[var(--primary-color)]' : 'border-transparent';
   return (
     <label
       htmlFor={id}
@@ -127,11 +134,10 @@ function RadioCard({ icon, label, value, name, required = false, checked = false
         flex flex-col items-center justify-center gap-1
         py-4 px-2 w-full max-w-[240px] mx-auto
         rounded-xl cursor-pointer
-        border-2 border-transparent bg-[#fafafd]
+        border-2 ${borderColor} bg-[#fafafd]
         shadow transition-all duration-200
         hover:bg-[#f4f3ff]
-        peer-checked:border-[#7f5af0] peer-checked:bg-[#ede9fe]
-        peer-checked:shadow-lg
+
         text-base font-semibold text-[#222]
         outline-none
         focus-within:ring-2 focus-within:ring-[#7f5af0]
