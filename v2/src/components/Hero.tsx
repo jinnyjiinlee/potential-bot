@@ -33,7 +33,7 @@ export default function Hero({ onModalClick }: HeroProps) {
       '
       >
         <Image
-          src='/images/hero-character.png'
+          src='/images/character-image.png'
           alt='포텐셜봇 캐릭터'
           className='w-40 md:w-52 mx-auto mb-8 block bg-transparent relative z-[1]'
           priority
