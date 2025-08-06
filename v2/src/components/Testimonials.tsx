@@ -1,5 +1,10 @@
 'use client';
 
+type TestimonialCardProps = {
+  text: string,
+  author: string
+}; 
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -17,7 +22,7 @@ const testimonials = [
   { text: '“리더로서 부담이 컸는데, 매일 아침 응원에 힘이 납니다.”', author: '직장인(리더급) 송00님' },
 ];
 
-function TestimonialCard({ text, author }) {
+function TestimonialCard({ text, author }: TestimonialCardProps) {
   return (
     <div
       className='

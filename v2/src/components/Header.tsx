@@ -1,4 +1,8 @@
-export default function Header({ onModalClick }) {
+type HeaderProps = {
+  onModalClick: () => void;
+};
+
+export default function Header({ onModalClick }: HeaderProps) {
   return (
     <header className='fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-[20px] z-[1000] py-4 transition-all duration-300 ease-in-out'>
       <div className='max-w-[1200px] mx-auto px-4 flex justify-between items-center'>

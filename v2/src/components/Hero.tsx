@@ -1,7 +1,11 @@
 import Image from 'next/image';
 import characterImage from '../assets/character-image.png';
 
-export default function Hero({ onModalClick }) {
+type HeroProps = {
+  onModalClick: () => void;
+};
+
+export default function Hero({ onModalClick }: HeroProps) {
   return (
     <section
       className='

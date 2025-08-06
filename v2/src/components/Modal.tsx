@@ -1,4 +1,17 @@
-export default function Modal({ show, onClose }) {
+type ModalProps = {
+  show: boolean;
+  onClose: () => void;
+};  
+
+type RadioCardProps = {
+  icon: string;
+  label: string;
+  value: string;
+  name: string;
+  required?: boolean;
+};
+
+export default function Modal({ show, onClose }: ModalProps) {
   if (!show) return null;
 
   return (
@@ -48,7 +61,13 @@ export default function Modal({ show, onClose }) {
   );
 }
 
-function RadioCard({ icon, label, value, name, required }) {
+function RadioCard({ 
+  icon, 
+  label, 
+  value, 
+  name, 
+  required = false 
+}: RadioCardProps) {
   const id = `${name}-${value}`;
   return (
     <label

@@ -1,4 +1,8 @@
-export default function LastMessage({ onModalClick }) {
+interface LastMessageProps {
+  onModalClick: () => void;
+}
+
+export default function LastMessage({ onModalClick }: LastMessageProps) {
   return (
     <section className='w-full px-4 py-12 flex flex-col items-center justify-center bg-[#f8f9fb] shadow-lg'>
       <div className='text-center text-2xl md:text-3xl font-bold leading-snug mb-8'>
