@@ -28,6 +28,7 @@ export default function Hero({ onModalClick }: HeroProps) {
             alt='포텐셜봇 캐릭터'
             fill
             priority
+            unoptimized
             className='object-contain bg-transparent'
           />
         </div>
