@@ -1,7 +1,10 @@
+import { FormEvent, useState } from 'react';
+import { supabase } from '@/lib/supabaseClient';
+
 type ModalProps = {
   show: boolean;
   onClose: () => void;
-};  
+};
 
 type RadioCardProps = {
   icon: string;
@@ -9,10 +12,32 @@ type RadioCardProps = {
   value: string;
   name: string;
   required?: boolean;
+  checked?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 export default function Modal({ show, onClose }: ModalProps) {
+  const [userType, setUserType] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
+
   if (!show) return null;
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!userType || !email) {
+      return alert('모든 항목을 입력해주세요.');
+    }
+    setLoading(true);
+    const { error } = await supabase.from('subscribers').insert({ user_type: userType, email });
+    setLoading(false);
+
+    if (error) alert('구독 실패: ' + error.message);
+    else {
+      alert('구독 완료! 🙌');
+      onClose();
+    }
+  };
 
   return (
     <div className='fixed inset-0 z-[1000] flex items-center justify-center bg-black/50 backdrop-blur-[3px]'>
@@ -30,14 +55,43 @@ export default function Modal({ show, onClose }: ModalProps) {
           </svg>
         </button>
         <h2 className='text-2xl font-bold mb-2 text-center'>포텐셜봇이 응원할게요!</h2>
-        <form className='flex flex-col gap-8 '>
+        <form className='flex flex-col gap-8 ' onSubmit={handleSubmit}>
           <div>
             <h3 className='font-semibold mb-5 text-center text-lg'>어떤 분이신가요?</h3>
             <div className='grid grid-cols-2 sm:grid-cols-2 gap-4 w-full justify-items-center mb-2'>
-              <RadioCard icon='🎓' label='취업준비생' value='취업준비생' name='userType' required />
-              <RadioCard icon='🚀' label='이직준비생' value='이직준비생' name='userType' />
-              <RadioCard icon='💼' label='직장인(사원급)' value='직장인(사원급)' name='userType' />
-              <RadioCard icon='🌟' label='직장인(리더급)' value='직장인(리더급)' name='userType' />
+              <RadioCard
+                icon='🎓'
+                label='취업준비생'
+                value='취업준비생'
+                name='userType'
+                required
+                checked={userType === '취업준비생'}
+                onChange={() => setUserType('취업준비생')}
+              />
+              <RadioCard
+                icon='🚀'
+                label='이직준비생'
+                value='이직준비생'
+                name='userType'
+                checked={userType === '이직준비생'}
+                onChange={() => setUserType('이직준비생')}
+              />
+              <RadioCard
+                icon='💼'
+                label='직장인(사원급)'
+                value='직장인(사원급)'
+                name='userType'
+                checked={userType === '직장인(사원급)'}
+                onChange={() => setUserType('직장인(사원급)')}
+              />
+              <RadioCard
+                icon='🌟'
+                label='직장인(리더급)'
+                value='직장인(리더급)'
+                name='userType'
+                checked={userType === '직장인(리더급)'}
+                onChange={() => setUserType('직장인(리더급)')}
+              />
             </div>
           </div>
           <div className='flex flex-col gap-2 items-center w-full'>
@@ -47,12 +101,15 @@ export default function Modal({ show, onClose }: ModalProps) {
               placeholder='이메일 주소를 입력하세요'
               className='w-full max-w-xs border border-gray-200 rounded-xl px-4 py-3 text-base shadow focus:border-[var(--primary-color)] focus:ring-2 focus:ring-[var(--primary-color)] outline-none transition'
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <button
               type='submit'
+              disabled={loading}
               className='w-full max-w-xs bg-[var(--primary-color)] hover:bg-[var(--primary-color-dark)] text-white font-bold py-3 rounded-xl shadow-md hover:scale-105 transition'
             >
-              구독하기
+              {loading ? '구독 중…' : '구독하기'}
             </button>
           </div>
         </form>
@@ -61,13 +118,7 @@ export default function Modal({ show, onClose }: ModalProps) {
   );
 }
 
-function RadioCard({ 
-  icon, 
-  label, 
-  value, 
-  name, 
-  required = false 
-}: RadioCardProps) {
+function RadioCard({ icon, label, value, name, required = false, checked = false, onChange }: RadioCardProps) {
   const id = `${name}-${value}`;
   return (
     <label
@@ -87,7 +138,16 @@ function RadioCard({
       `}
       style={{ minWidth: 0 }}
     >
-      <input type='radio' id={id} name={name} value={value} required={required} className='hidden peer' />
+      <input
+        type='radio'
+        id={id}
+        name={name}
+        value={value}
+        required={required}
+        className='hidden peer'
+        checked={checked}
+        onChange={onChange}
+      />
       <span className='text-2xl'>{icon}</span>
       <span>{label}</span>
     </label>
