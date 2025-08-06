@@ -16,6 +16,8 @@ export function FeatureCard({ icon, title, description }: FeatureCardProps) {
         duration-200
         flex flex-col items-center
         min-h-[220px]
+        h-full
+        w-full max-w-xs
         px-5 py-8
         hover:shadow-xl
         hover:-translate-y-1
@@ -46,9 +48,9 @@ export function FeatureCard({ icon, title, description }: FeatureCardProps) {
 
 export default function Features() {
   return (
-    <section id='features' className='bg-[#f9f9fb] py-16'>
-      <div className='max-w-4xl mx-auto px-4'>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8'>
+    <section id='features' className='bg-[#f9f9fb] py-16 scroll-mt-58'>
+      <div className='max-w-6xl mx-auto px-4'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center items-stretch'>
           <FeatureCard
             icon='🌅'
             title='아침 8시, 특별한 메시지'

@@ -20,7 +20,7 @@ export default function Header({ onModalClick }: HeaderProps) {
         {/* 네비게이션 (PC 이상에서만 노출) */}
         <nav className='hidden md:flex gap-8 items-center'>
           <a
-            href='#team'
+            href='#'
             className='text-gray-700 text-base hover:text-[var(--primary-color)] transition-colors duration-200'
           >
             포텐셜봇이란?
