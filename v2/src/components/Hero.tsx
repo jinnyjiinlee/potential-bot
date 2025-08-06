@@ -24,7 +24,7 @@ export default function Hero({ onModalClick }: HeroProps) {
         {/* 이미지만 감싸는 박스 */}
         <div className='relative w-40 h-40 md:w-52 md:h-52 mx-auto mb-8'>
           <Image
-            src='/images/character-image.png'
+            src='/images/character-image.webp'
             alt='포텐셜봇 캐릭터'
             fill
             priority

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/images/chat-icon.png',
     apple: '/apple-touch-icon.png',
-    shortcut: '/images/character-image.png',
+    shortcut: '/images/character-image.webp',
   },
 };
 
