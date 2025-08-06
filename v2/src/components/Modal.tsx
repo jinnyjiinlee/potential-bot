@@ -35,7 +35,7 @@ export default function Modal({ show, onClose }: ModalProps) {
       return alert('모든 항목을 입력해주세요.');
     }
     setLoading(true);
-    const { error } = await supabase.from('subscribers').insert({ user_type: userType, email });
+    const { error } = await supabase.from('users').insert({ user_type: userType, email });
     setLoading(false);
 
     if (error) alert('구독 실패: ' + error.message);
