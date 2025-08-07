@@ -1,5 +1,1 @@
-# www 리디렉트 (non-www → www)
-https://potential-bot.netlify.app/*  https://www.potential-bot.netlify.app/:splat  301!
-
-# SPA 라우팅
 /*  /index.html  200
