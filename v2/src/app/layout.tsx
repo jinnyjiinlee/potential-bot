@@ -28,7 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='ko'>
+      <head>
+        <link rel='canonical' href='https://www.potential-bot.netlify.app/' />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
     </html>
   );
