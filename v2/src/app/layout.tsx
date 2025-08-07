@@ -31,8 +31,23 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <head>
+        {/* GA4 tracking code */}
+        <script async src='https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX'></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-63988853GR');
+            `,
+          }}
+        />
+
+        {/* canonical URL */}
         <link rel='canonical' href='https://www.potential-bot.netlify.app/' />
 
+        {/* Open Graph meta tags */}
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://www.potential-bot.netlify.app/' />
         <meta property='og:title' content='포텐셜봇 | AI 응원 챗봇으로 더 좋은 하루 시작' />
@@ -43,7 +58,7 @@ export default function RootLayout({
         <meta property='og:image' content='https://www.potential-bot.netlify.app/og-preview-image.jpg' />
         <meta property='og:site_name' content='포텐셜봇' />
         <meta property='og:locale' content='ko_KR' />
-        {/* Twitter Card */}
+
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:title' content='포텐셜봇 | AI 응원 챗봇으로 더 좋은 하루 시작' />
         <meta
