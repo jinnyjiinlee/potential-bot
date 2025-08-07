@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: '포텐셜봇 | 매일 아침 응원으로 나의 잠재력을 깨워주는 AI 친구',
-  description: '취준생, 이직생, 직장인 등 누구나 매일 아침 따뜻한 응원을 받으며 하루를 시작할 수 있는 포텐셜봇입니다.',
+  description: '포텐셜봇은 취준생, 이직 준비생, 직장인 모두에게 매일 아침 AI가 맞춤 응원을 전해주는 서비스입니다. 매일 새로운 메시지로 잠재력을 깨우고, 긍정적인 하루의 시작을 도와주는 AI 응원 챗봇! 따뜻한 AI 친구가 당신의 아침을 특별하게 만들어줍니다.',
   icons: {
     icon: '/images/character-image.webp',
     apple: '/apple-touch-icon.png',

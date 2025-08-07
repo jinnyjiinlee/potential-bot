@@ -25,7 +25,7 @@ export default function Hero({ onModalClick }: HeroProps) {
         <div className='relative w-40 h-40 md:w-52 md:h-52 mx-auto mb-8'>
           <Image
             src='/images/character-image.webp'
-            alt='포텐셜봇 캐릭터'
+            alt='포텐셜봇 AI 응원 캐릭터'
             fill
             priority
             unoptimized
@@ -35,9 +35,9 @@ export default function Hero({ onModalClick }: HeroProps) {
 
         {/* 텍스트 & 버튼은 별도로 */}
         <h1 className='text-left text-3xl md:text-5xl font-extrabold text-[#22223b] mb-6 leading-tight'>
-          더 좋은 하루를
+          포텐셜봇의 응원메세지로
           <br />
-          선물할게요
+          더 좋은 하루를 시작하세요
         </h1>
 
         <p className='text-left text-base md:text-xl text-[#5b3a8b] mb-10 font-bold leading-relaxed'>
